@@ -13,12 +13,14 @@ namespace aspnet1.Controllers
             logger.LogInformation("ROUTE: " + HttpContext.Request.Path);
 
             var model = new MainPageViewModel {
-                Time = DateTime.Now.ToString("HH:mm:ss dd.MM.yyyy")
+                Time = DateTime.Now.ToString("HH:mm:ss dd.MM.yyyy"),
+                ShowRequests = true,
+                ShowNotification = true
             };
-            // создание экземпляра модели и запись данных
+            // СЃРѕР·РґР°РЅРёРµ СЌРєР·РµРјРїР»СЏСЂР° РјРѕРґРµР»Рё РґР»СЏ VIEW
 
             return View(model);
-            // создание View с моделью и возврат готового
+            // СЃРѕР·РґР°РЅРёРµ View СЃ РјРѕРґРµР»СЊСЋ Рё РІРѕР·РІСЂР°С‚ РіРѕС‚РѕРІРѕРіРѕ
         }
     }
 }

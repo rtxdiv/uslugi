@@ -13,9 +13,9 @@ app.UseRouting();
 
 app.Use(async (context, next) => {
     await next();
-    // подолждать все middleware
+    // РїРѕРґРѕР»Р¶РґР°С‚СЊ РІСЃРµ middleware
 
-    // если результат 404, меняем Req и делаем middleware заново
+    // РµСЃР»Рё СЂРµР·СѓР»СЊС‚Р°С‚ 404, РјРµРЅСЏРµРј Req Рё РґРµР»Р°РµРј middleware Р·Р°РЅРѕРІРѕ
     if (context.Response.StatusCode == 404) {
         context.Response.Redirect("/");
     }
