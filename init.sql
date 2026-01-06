@@ -11,10 +11,10 @@ COLLATE='utf8mb4_0900_ai_ci';
 
 CREATE TABLE `requests` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `service` INT NOT NULL,
-    `request` TEXT NOT NULL,
+    `service_id` INT NOT NULL,
+    `query` TEXT NOT NULL,
     `contact` TEXT NOT NULL,
-    `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `status` BOOLEAN NULL DEFAULT NULL,
     `user_noti` BOOLEAN NOT NULL DEFAULT false,
     `admin_noti` BOOLEAN NOT NULL DEFAULT true,

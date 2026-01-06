@@ -1,24 +1,25 @@
+using aspnet1.Entity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// DbContext
+var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
 // сервисы
 builder.Services.AddSingleton<IMainService, MainService>();
 
+// контроллеры
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-if (app.Environment.IsDevelopment()) {
-    app.UseDeveloperExceptionPage();
-}
 
 app.UseStaticFiles();
 app.UseRouting();
 
 app.Use(async (context, next) => {
     await next();
-    // подолждать все middleware
-
-    // если результат 404, меняем Req и делаем middleware заново
     if (context.Response.StatusCode == 404) {
         context.Response.Redirect("/");
     }
