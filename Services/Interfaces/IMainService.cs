@@ -1,4 +1,9 @@
-public interface IMainService
+using aspnet1.Entity;
+
+namespace aspnet1.Services.Interfaces
 {
-    Task<int> Test();
+    public interface IMainService
+    {
+        Task<List<Service>> GetServices();
+    }
 }

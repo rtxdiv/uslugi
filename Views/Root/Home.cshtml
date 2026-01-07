@@ -1,0 +1,39 @@
+﻿@using aspnet1.Entity
+@model aspnet1.Models.HomeModel
+@{
+	Layout = "~/Views/Layouts/BaseLayout.cshtml";
+}
+
+@section Styles {
+	<link href="~/css/card.css" rel="stylesheet" />
+}
+
+@foreach (Service service in Model.Services) {
+	<div class="service">
+
+		<div class="imagebox">
+			<img src="~/img/services/@service.Image" />
+		</div>
+
+		<div class="body">
+			<a class="title">@service.Name</a>
+			<a class="text">@service.Description</a>
+
+			@if (Model.Admin == false) {
+				<div class="control-user">
+					<button>book</button>
+				</div>
+			}
+		</div>
+
+		@if (Model.Admin == true) {
+			<div class="control-admin">
+				<button>vis</button>
+				<button>edit</button>
+				<button>del</button>
+			</div>
+
+		}
+
+	</div>
+}

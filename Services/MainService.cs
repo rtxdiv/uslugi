@@ -1,12 +1,14 @@
 using aspnet1.Entity;
+using aspnet1.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-public class MainService(AppDbContext db) : IMainService
+namespace aspnet1.Services
 {
-    public async Task<int> Test()
+    public class MainService(AppDbContext db) : IMainService
     {
-        List<Service> resp = await db.Services.ToListAsync();
-        Console.WriteLine(resp);
-        return 0;
+        public async Task<List<Service>> GetServices()
+        {
+            return await db.Services.ToListAsync();
+        }
     }
 }
