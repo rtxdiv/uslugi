@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace aspnet1.Services
 {
-    public class MainService(AppDbContext db) : IMainService
+    public class RootService(AppDbContext db) : IRootService
     {
         public async Task<List<Service>> GetServices()
         {

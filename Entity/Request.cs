@@ -7,7 +7,9 @@ public partial class Request
 {
     public int Id { get; set; }
 
-    public int ServiceId { get; set; }
+    public string UserId { get; set; } = null!;
+
+    public string ServiceName { get; set; } = null!;
 
     public string Query { get; set; } = null!;
 

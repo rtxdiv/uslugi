@@ -10,7 +10,8 @@ var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
 // сервисы
-builder.Services.AddSingleton<IMainService, MainService>();
+builder.Services.AddScoped<IRootService, RootService>();
+builder.Services.AddScoped<IRequestsService, RequestsService>();
 
 // контроллеры
 builder.Services.AddControllersWithViews();

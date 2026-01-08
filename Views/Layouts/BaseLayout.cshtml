@@ -18,10 +18,8 @@
 
             @if (Model.Layout.ShowRequests == true) {
 
-                <div class="requests">
-
+                <div class="requests" onclick="goToRequests()">
                     <div class="button">Мои запросы</div>
-
                     @if (Model.Layout.ShowNotification == true) {
                         <div class="notification">UPD</div>
                     }
@@ -35,5 +33,6 @@
         @RenderBody()
     </div>
 
+    <script src="~/js/layout/base.js"></script>
 </body>
 </html>

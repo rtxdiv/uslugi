@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+
 namespace aspnet1.Entity;
 
 public partial class AppDbContext : DbContext
 {
-    public AppDbContext()
-    {
-    }
-
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
@@ -43,8 +42,13 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Query)
                 .HasColumnType("text")
                 .HasColumnName("query");
-            entity.Property(e => e.ServiceId).HasColumnName("service_id");
+            entity.Property(e => e.ServiceName)
+                .HasColumnType("text")
+                .HasColumnName("service_name");
             entity.Property(e => e.Status).HasColumnName("status");
+            entity.Property(e => e.UserId)
+                .HasColumnType("text")
+                .HasColumnName("user_id");
             entity.Property(e => e.UserNoti).HasColumnName("user_noti");
         });
 

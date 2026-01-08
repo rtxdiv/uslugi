@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Title🤯</title>
     <link href="~/css/layout/modal.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
 </head>
 <body>
 
     <header>
         <div class="container">
 
-            <div class="back">
+            <div class="back" onclick="goBack()">
                 <img src="~/img/back.png" />
                 <a>НАЗАД</a>
             </div>
@@ -23,5 +24,6 @@
         @RenderBody()
     </div>
 
+    <script src="~/js/layout/modal.js"></script>
 </body>
 </html>

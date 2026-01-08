@@ -11,7 +11,8 @@ COLLATE='utf8mb4_0900_ai_ci';
 
 CREATE TABLE `requests` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `service_id` INT NOT NULL,
+    `user_id` TEXT NOT NULL,
+    `service_name` TEXT NOT NULL,
     `query` TEXT NOT NULL,
     `contact` TEXT NOT NULL,
     `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,

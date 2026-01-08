@@ -1,18 +1,18 @@
+using Microsoft.AspNetCore.Mvc;
 using aspnet1.Models;
 using aspnet1.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 
 namespace aspnet1.Controllers
 {
     [Route("/")]
-    public class RootController(IMainService mainService) : Controller
+    public class RootController(IRootService rootService) : Controller
     {
         [HttpGet]
-        public async Task<IActionResult> Home() {
-
-            var model = new HomeModel {
-                Services = await mainService.GetServices(),
-                Admin = false,
+        public async Task<IActionResult> Home()
+        {
+            HomeModel model = new() {
+                Services = await rootService.GetServices(),
+                Admin = true,
                 Layout = {
                     ShowRequests = true,
                 }

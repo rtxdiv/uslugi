@@ -1,0 +1,31 @@
+@using aspnet1.Entity
+@model aspnet1.Models.RequestsModel
+@{
+    Layout = "~/Views/Layouts/ModalLayout.cshtml";
+}
+
+@section Styles {
+    <link href="~/css/card.css" rel="stylesheet" />
+}
+
+@foreach (Request request in Model.Requests) {
+    <div class="card">
+
+        <div class="body">
+
+            <div class="body-content">
+                <a class="title">@request.ServiceName</a>
+                <a class="text">@request.Query</a>
+            </div>
+
+            @if (Model.Admin == true) {
+                <div class="control-admin">
+                    <button>Accept</button>
+                    <button>Reject</button>
+                </div>
+            }
+
+        </div>
+
+    </div>
+}
