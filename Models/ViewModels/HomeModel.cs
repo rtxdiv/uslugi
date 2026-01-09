@@ -1,8 +1,9 @@
 ﻿using aspnet1.Entity;
 
-namespace aspnet1.Models
+namespace aspnet1.Models.ViewModels
 {
-    public class HomeModel : BaseLayoutModel {
+    public class HomeModel : BaseLayoutModel
+    {
         public List<Service> Services { get; set; } = [];
         public bool Admin { get; set; } = false;
     }

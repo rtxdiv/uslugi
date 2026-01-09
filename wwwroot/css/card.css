@@ -6,7 +6,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
-    margin-top: 30px;
+    margin-bottom: 30px;
     box-sizing: border-box;
     border: 1px rgb(150, 150, 150) solid;
     box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
@@ -38,13 +38,15 @@
             .title {
                 font-size: 20px;
                 font-weight: 500;
+                margin: 0;
                 margin-bottom: 5px;
             }
             .text {
                 font-size: 16px;
+                margin: 7px 0;
             }
             .control-user button {
-                margin-top: 20px;
+                margin-top: 15px;
                 background: rgb(0, 132, 255);
                 color: white;
                 outline: none;
@@ -58,6 +60,9 @@
                 font-size: 16px;
                 cursor: pointer;
                 transition: 0.2s;
+            }
+            .control-user input {
+                display: none;
             }
             .control-user button:hover {
                 transform: translateY(-2px);

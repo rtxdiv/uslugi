@@ -1,0 +1,85 @@
+.service {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+
+    .imgbox {
+        height: 50px;
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+    .requirements {
+        font-size: 16px;
+        margin: 0;
+    }
+}
+
+form {
+    width: 100%;
+
+    .service-name {
+        display: none;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 18px;
+
+        p {
+            font-size: 17px;
+            font-weight: 500;
+            margin: 0;
+            margin-bottom: 7px;
+        }
+
+        textarea {
+            height: 150px;
+            padding: 10px;
+        }
+        input {
+            height: 40px;
+            padding: 10px;
+        }
+    }
+
+    .row textarea, .row input, button {
+        outline: none;
+        box-sizing: border-box;
+        border-radius: 7px;
+        width: 100%;
+        resize: none;
+        border: 1px rgb(50, 50, 50) solid;
+        font-size: 15px;
+        background: rgb(245, 245, 245);
+    }
+
+    button {
+        margin-top: 5px;
+        height: 40px;
+        width: 180px;
+        max-width: 100%;
+        cursor: pointer;
+        color: white;
+        background: rgb(0, 132, 255);
+        border: 2px rgb(0, 118, 227) solid;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+    button:hover {
+        transform: translateY(-2px);
+    }
+}

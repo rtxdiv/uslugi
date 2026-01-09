@@ -1,5 +1,5 @@
 @using aspnet1.Entity
-@model aspnet1.Models.RequestsModel
+@model aspnet1.Models.ViewModels.RequestsModel
 @{
     Layout = "~/Views/Layouts/ModalLayout.cshtml";
 }
@@ -14,8 +14,8 @@
         <div class="body">
 
             <div class="body-content">
-                <a class="title">@request.ServiceName</a>
-                <a class="text">@request.Query</a>
+                <p class="title">@request.ServiceName</p>
+                <p class="text">@request.Query</p>
             </div>
 
             @if (Model.Admin == true) {

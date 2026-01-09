@@ -12,6 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connecti
 // сервисы
 builder.Services.AddScoped<IRootService, RootService>();
 builder.Services.AddScoped<IRequestsService, RequestsService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 // контроллеры
 builder.Services.AddControllersWithViews();
@@ -30,7 +31,7 @@ app.Use(async (context, next) => {
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Main}/{action=MainPage}"
+    pattern: "{controller=Root}/{action=Home}"
 );
 
 app.Run();

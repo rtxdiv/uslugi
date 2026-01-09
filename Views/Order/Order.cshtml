@@ -1,0 +1,32 @@
+@model aspnet1.Models.ViewModels.OrderModel
+@{
+    Layout = "~/Views/Layouts/ModalLayout.cshtml";
+}
+
+@section Styles {
+    <link href="~/css/order.css" rel="stylesheet" />
+}
+
+<div class="service">
+    <div class="imgbox">
+        <img src="~/img/services/@Model.Service.Image" />
+    </div>
+    <p class="title">@Model.Service.Name</p>
+    <p class="requirements">@Model.Service.Requirements</p>
+</div>
+
+<form method="post" action="/save">
+    <input class="service-name" name="service" value="@Model.Service.Name" readonly />
+
+    <div class="row">
+        <p>Опишите заказ</p>
+        <textarea name="query" minlength="1" placeholder="Пожалуйста, придерживайтесь указанного шаблона"></textarea>
+    </div>
+
+    <div class="row">
+        <p>Как с вами связаться</p>
+        <input name="contact" minlength="1" placeholder="Например, Telegram &#64;rtxdiv_production">
+    </div>
+
+    <button type="submit">Отправить</button>
+</form>

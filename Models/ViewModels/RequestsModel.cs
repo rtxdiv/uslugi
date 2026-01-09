@@ -1,8 +1,9 @@
 using aspnet1.Entity;
 
-namespace aspnet1.Models
+namespace aspnet1.Models.ViewModels
 {
-    public class RequestsModel : BaseLayoutModel {
+    public class RequestsModel : BaseLayoutModel
+    {
         public List<Request> Requests { get; set; } = [];
         public bool Admin { get; set; } = false;
     }

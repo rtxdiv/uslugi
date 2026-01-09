@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using aspnet1.Models;
+using aspnet1.Models.ViewModels;
 using aspnet1.Services.Interfaces;
 
 namespace aspnet1.Controllers

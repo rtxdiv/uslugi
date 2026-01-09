@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using aspnet1.Models;
+using aspnet1.Models.ViewModels;
 using aspnet1.Services.Interfaces;
 
 namespace aspnet1.Controllers
@@ -12,7 +12,7 @@ namespace aspnet1.Controllers
         {
             HomeModel model = new() {
                 Services = await rootService.GetServices(),
-                Admin = true,
+                Admin = false,
                 Layout = {
                     ShowRequests = true,
                 }

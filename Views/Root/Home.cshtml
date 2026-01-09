@@ -1,5 +1,5 @@
 ﻿@using aspnet1.Entity
-@model aspnet1.Models.HomeModel
+@model aspnet1.Models.ViewModels.HomeModel
 @{
 	Layout = "~/Views/Layouts/BaseLayout.cshtml";
 }
@@ -18,13 +18,14 @@
 			</div>
 
 			<div class="body-content">
-				<a class="title">@service.Name</a>
-				<a class="text">@service.Description</a>
+				<p class="title">@service.Name</p>
+				<p class="text">@service.Description</p>
 
 				@if (Model.Admin == false) {
-					<div class="control-user">
-						<button>book</button>
-					</div>
+					<form class="control-user" method="post" action="/order">
+						<input type="text" value="@service.Id" name="id" readonly />
+						<button type="submit">Заказать</button>
+					</form>
 				}
 			</div>
 
