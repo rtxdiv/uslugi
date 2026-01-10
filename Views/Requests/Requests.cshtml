@@ -6,8 +6,12 @@
 
 @section Styles {
     <link href="~/css/card.css" rel="stylesheet" />
+    <link href="~/css/requests.css" rel="stylesheet" />
 }
 
+@if (Model.Requests.Count == 0) {
+    <img class="norequests" src="~/img/norequests.png" />
+}
 @foreach (Request request in Model.Requests) {
     <div class="card">
 

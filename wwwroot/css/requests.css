@@ -1,0 +1,7 @@
+.norequests {
+    width: 100%;
+    max-width: 370px;
+    box-sizing: border-box;
+    padding: 0 30px;
+    opacity: 0.4;
+}

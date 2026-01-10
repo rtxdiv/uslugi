@@ -30,8 +30,7 @@ namespace services.Controllers
         [HttpPost("/send")]
         public async Task<IActionResult> Send([FromBody] OrderSendDto body)
         {
-            string? userId;
-            if (Request.Cookies.TryGetValue("user_id", out userId)) {
+            if (Request.Cookies.TryGetValue("user_id", out string? userId)) {
                 if (!await authService.ValidateUserId(userId)) {
                     userId = Guid.NewGuid().ToString();
                 }

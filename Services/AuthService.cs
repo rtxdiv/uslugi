@@ -8,8 +8,8 @@ namespace services.Services
     {
         public async Task<bool> ValidateUserId(string userId)
         {
-            List<Request> requests = await db.Requests.ToListAsync();
-            if (requests.Count == 0) return false;
+            int requestsCount = await db.Requests.Where(e => e.UserId == userId).CountAsync();
+            if (requestsCount == 0) return false;
             return true;
         }
     }
